@@ -169,16 +169,34 @@
     </div>
 
     <script>
-        // Rastrear clique no botão do Site
-        document.getElementById('btn-site').addEventListener('click', function() {
+        // Rastrear clique no botão do Site (Com Delay de Segurança)
+        document.getElementById('btn-site').addEventListener('click', function(event) {
+            event.preventDefault(); // Puxa o freio de mão (impede o link de abrir na hora)
+            var urlDestino = this.href; // Guarda a URL da Nuvemshop
+            
+            // Dispara o evento pro Facebook
             fbq('track', 'ViewContent', { content_name: 'Ir para o Site' });
             console.log('Evento ViewContent disparado');
+            
+            // Espera 300 milissegundos e libera o cliente pra loja
+            setTimeout(function() {
+                window.location.href = urlDestino;
+            }, 300);
         });
 
-        // Rastrear clique no botão do WhatsApp
-        document.getElementById('btn-whats').addEventListener('click', function() {
+        // Rastrear clique no botão do WhatsApp (Com Delay de Segurança)
+        document.getElementById('btn-whats').addEventListener('click', function(event) {
+            event.preventDefault(); // Puxa o freio de mão
+            var urlDestino = this.href; // Guarda a URL do Whats
+            
+            // Dispara o evento pro Facebook
             fbq('track', 'Contact', { content_name: 'Chamada no WhatsApp' });
             console.log('Evento Contact disparado');
+            
+            // Espera 300 milissegundos e libera pro Whats
+            setTimeout(function() {
+                window.location.href = urlDestino;
+            }, 300);
         });
     </script>
 
