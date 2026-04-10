@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Villela Store - Acesso Restrito</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1299154598705766');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1299154598705766&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
+    <style>
+        /* Estilo Minimalista e Moderno (Premium Dark) */
+        :root {
+            --bg-color: #000000;
+            --text-main: #f5f5f7;
+            --text-muted: #86868b;
+            --btn-primary: #ffffff;
+            --btn-primary-text: #000000;
+            --btn-radius: 14px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Tipografia baseada no ecossistema Apple para máxima legibilidade */
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            /* Animação suave de entrada */
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .logo-wrapper {
+            margin-bottom: 1px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo {
+            max-height: 200px; /* Ajuste o tamanho do logo conforme necessário */
+            max-width: 80%;   /* Garante que o logo não toque nas bordas em telas muito pequenas */
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 16px;
+            border-radius: var(--btn-radius);
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Botão Primário - Foco Total */
+        .btn-primary {
+            background-color: var(--btn-primary);
+            color: var(--btn-primary-text);
+            margin-bottom: 16px;
+        }
+
+        .btn-primary:active {
+            transform: scale(0.96);
+            opacity: 0.9;
+        }
+
+        /* Botão Secundário - Discreto */
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid #333333;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .btn-secondary:active {
+            background-color: #111111;
+            transform: scale(0.98);
+        }
+
+        /* Estilo para o ícone de +18 dentro do botão */
+        .btn-primary .plus18-icon {
+            font-size: 1.2em; /* Um pouco maior que o texto */
+            margin-right: 8px; /* Espaço entre o ícone e o texto */
+            line-height: 1;    /* Garante alinhamento vertical perfeito */
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-wrapper">
+            <img src="logo.png" alt="Logo Villela Store" class="logo">
+        </div>
+        
+        <h1>Acesso Restrito</h1>
+        <p>Confirme sua idade para acessar nosso catálogo exclusivo de Bem-Estar Íntimo com total segurança e sigilo.</p>
+        
+        <a href="https://villelastore01.com.br/?utm_source=metaads&utm_medium=presell&utm_campaign=vendas_presell_atracao_desejo" class="btn btn-primary" id="btn-site">
+            <span class="plus18-icon">🔞</span>
+            <span>Sim, tenho mais de 18 anos</span>
+        </a>
+        
+        <a href="https://wa.me/5516994002350?text=Olá,%20pode%20me%20ajudar?" class="btn btn-secondary" id="btn-whats">
+            Precisa de ajuda discreta? Fale conosco
+        </a>
+    </div>
+
+    <script>
+        // Rastrear clique no botão do Site
+        document.getElementById('btn-site').addEventListener('click', function() {
+            fbq('track', 'ViewContent', { content_name: 'Ir para o Site' });
+            console.log('Evento ViewContent disparado');
+        });
+
+        // Rastrear clique no botão do WhatsApp
+        document.getElementById('btn-whats').addEventListener('click', function() {
+            fbq('track', 'Contact', { content_name: 'Chamada no WhatsApp' });
+            console.log('Evento Contact disparado');
+        });
+    </script>
+
+</body>
+</html>
